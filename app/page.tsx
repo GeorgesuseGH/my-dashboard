@@ -1,27 +1,40 @@
-import Link from "next/link"
-import Image from "next/image"
-import { lavish } from "./ui/fonts"
+import Nav from "./ui/homeUi/nav"
+import Footer from "./ui/footer"
 export default function Home(){
-return (
-<main> 
+return (<>
+<main > 
 
-<div className="grid grid-rows-2">
-  <div className="grid grid-cols-3 items-center justify-items-center bg-linear-to-r from-purple-600 via-pink-200 to-purple-600 sticky">
-    <Image alt="website logo" width="170" height="75" src="/purple_pink_dashboard_logo.svg"></Image>
+<div className="flex flex-col justify-center items-center gap-10  w-full md:h-screen">
+  <div className="text-white w-full">
+  <Nav/>
+    
+  <h2 className=" text-3xl bg-black w-full text-center p-2 font-bold">Summerising your financial life,goals,status into real time metrics and analysis</h2>
 
-    <h1 className={`text-4xl ${lavish.className}`}>FlatBoard</h1>
-    <div className="w-20"></div>
-    </div>
-  
-  <div className="flex flex-col gap-14 items-center text-3xl">
-<h2 className="text-grey-400">Summerising your financial life,goals,status into real time metrics and analysis</h2>
-<p>Welcome to FlatBoard , to  your new finance metrics maker!</p>
-<Link href="/login" className="">
-<span className="w-full h-[10%] bg-linear-to-r from-purple-600 via-pink-200 to-purple-600 rounded-2xl px-10 hover:shadow-2xl " >Login</span></Link>
-<Link href="/signup" className="">
-<span className="w-full h-[10%] bg-linear-to-r from-purple-600 via-pink-200 to-purple-600 rounded-2xl px-10 hover:shadow-2xl " >Signup</span></Link>
-</div></div>
+</div>
+<div className="  w-full h-full flex flex-col items-center justify-center gap-10">
+<h2 className=" text-2xl text-center bg-linear-to-t from-purple-700 to-pink-300 w-full font-bold" > NextBoard , providing you with your finance metrics!</h2>
+<div  className="  w-full h-full flex flex-col items-center justify-center gap-15">
+<h3 className="text-3xl font-bold">Our Analysis</h3>
+{
+// <Image alt="" src=""></Image> //
+}
+<h3 className="text-3xl font-bold">Target Check</h3>
+{
+// <Image alt="" src=""></Image> //
+}
+
+<h3 className="text-3xl font-bold">Target Check</h3>
+{
+// <Image alt="" src=""></Image> //
+}
+</div>
+</div>
+
+
+  </div>
 </main>
+<Footer></Footer>
+</>
  
 )
 }
