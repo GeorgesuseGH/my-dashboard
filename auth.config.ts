@@ -17,7 +17,7 @@ export const authConfig={
       return true;//for users who are visiting the page for the first time , they will be authorized to do so
     },
   },
-  providers: [],
+  providers: [],//array for differnet login options ,like google ,github,..
 
 } satisfies NextAuthConfig;
 
