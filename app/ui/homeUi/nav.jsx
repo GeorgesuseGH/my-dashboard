@@ -33,7 +33,7 @@ export default function Nav(){
 <Link href="/login" className="">
 <span className=" bg-white rounded-xl border px-2 text-black hover:bg-black hover:text-white" >Login</span></Link>
 <Link href="/signup" className="">
-<span className="  bg-linear-to-t from-purple-700 to-pink-400 rounded-xl  border px-2 text-black hover:text-purple-700 hover:bg-white">Free trial</span></Link>
+<span className="  bg-linear-to-t from-purple-700 via-pink-300 to-purple-700 rounded-xl  border px-2 text-black hover:text-purple-700 hover:bg-white">Free trial</span></Link>
 
 
      </div>

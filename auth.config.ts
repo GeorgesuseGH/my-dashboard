@@ -1,4 +1,4 @@
-import { url } from "inspector";
+
 import type { NextAuthConfig } from "next-auth";
 export const authConfig={
     pages:{

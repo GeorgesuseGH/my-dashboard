@@ -3,8 +3,10 @@ import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import type { User } from '@/app/lib/definitions';
 import postgres from 'postgres';
- import z from 'zod';
+import z from 'zod';
+import bcrypt from 'bcryptjs';
 
+//password hashing for safety
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 async function getUser(email: string): Promise<User | undefined> {
@@ -23,12 +25,15 @@ export const { auth, signIn, signOut } = NextAuth({
     Credentials({
       async authorize(credentials) {
         const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
+          .object({ email: z.email(), password: z.string().min(6) })
           .safeParse(credentials);
 if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);
           if (!user) return null;
+         
+          const comparePass=await bcrypt.compare(password,user.password)
+          if(comparePass)return user
         }
  
         return null;
